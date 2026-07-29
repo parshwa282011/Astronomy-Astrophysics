@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b19">
+  <meta name="description" content="A static astronomy document library for PDFs, Word documents, and EPUBs.">
+  <title>Orbit Archive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars stars-one" aria-hidden="true"></div>
+  <div class="stars stars-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Orbit Archive home">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span>
+        <strong>ORBIT</strong>
+        <small>ARCHIVE</small>
+      </span>
+    </a>
+    <div class="header-meta">
+      <span class="signal"><i></i> DEEP SPACE LIBRARY</span>
+      <span id="headerCount">24 OBJECTS CATALOGUED</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> PERSONAL OBSERVATORY · ARCHIVE 01</div>
+      <h1>Explore the <em>universe</em><br>one page at a time.</h1>
+      <p>A curated flight deck for astronomy, astrophysics, and rocket science.</p>
+
+      <div class="toolbar">
+        <label class="search">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search the archive…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="filters" role="group" aria-label="Filter documents">
+          <button class="filter active" data-filter="all">All <span id="allCount">24</span></button>
+          <button class="filter" data-filter="pdf">PDF <span id="pdfCount">21</span></button>
+          <button class="filter" data-filter="docx">DOCX <span id="docxCount">2</span></button>
+          <button class="filter" data-filter="epub">EPUB <span id="epubCount">1</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="library" aria-label="Document library">
+      <div class="library-heading">
+        <div>
+          <span class="section-number">01</span>
+          <h2>Celestial collection</h2>
+        </div>
+        <p id="resultCount">Showing 24 transmissions</p>
+      </div>
+      <div id="documentGrid" class="document-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <span>✦</span>
+        <h3>No transmissions found</h3>
+        <p>Try another search or document type.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="reader" class="reader" hidden>
+    <div class="reader-backdrop" data-close-reader></div>
+    <section class="reader-panel" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+      <header class="reader-header">
+        <div class="reader-title">
+          <span class="file-chip">PDF</span>
+          <div>
+            <small>NOW OBSERVING</small>
+            <h2 id="readerTitle"></h2>
+          </div>
+        </div>
+        <div class="reader-actions">
+          <a id="readerDownload" class="icon-button" href="#" download title="Download PDF" aria-label="Download PDF">↓</a>
+          <a id="readerOpen" class="icon-button" href="#" target="_blank" rel="noopener" title="Open in new tab" aria-label="Open in new tab">↗</a>
+          <button class="icon-button close-button" data-close-reader aria-label="Close reader">×</button>
+        </div>
+      </header>
+      <div class="reader-body">
+        <iframe id="pdfFrame" title="PDF document viewer"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <span>ORBIT ARCHIVE <i>✦</i> EST. 2026</span>
+    <span>STATIC SIGNAL · GITHUB PAGES READY</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
